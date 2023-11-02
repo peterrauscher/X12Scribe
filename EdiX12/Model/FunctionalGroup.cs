@@ -27,6 +27,7 @@ namespace EdiX12.Model
             {
                 Transactions.Add(transactionSet);
             }
+            GS.
         }
 
         public void Add(TransactionSetType transactionSet)
