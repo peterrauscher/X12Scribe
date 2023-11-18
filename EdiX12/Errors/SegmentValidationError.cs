@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EdiX12.Model.Error
+namespace X12Scribe.Errors
 {
     internal class SegmentValidationError
     {

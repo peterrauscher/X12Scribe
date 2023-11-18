@@ -1,13 +1,12 @@
-﻿using EdiX12.Model;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EdiX12.Model.TransactionSets
+namespace X12Scribe.Model.TransactionSets
 {
-    public class PurchaseOrder850 : TransactionSet
+    public class PO850 : TransactionSet
     {
         
     }

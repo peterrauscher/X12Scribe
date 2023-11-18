@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EdiX12.Model.Segments.Trailers
+namespace X12Scribe.Model.Segments.Trailers
 {
     public class GE
     {
-
+        public int TransactionCount { get; set; }
+        public int GroupControlNumber { get; set; }
     }
 }

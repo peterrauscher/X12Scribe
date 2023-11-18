@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EdiX12
+namespace X12Scribe
 {
     public class ValidationSettings
     {

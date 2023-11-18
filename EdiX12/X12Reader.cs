@@ -1,4 +1,4 @@
-﻿namespace EdiX12
+﻿namespace X12Scribe
 {
     public class X12Reader
     {
