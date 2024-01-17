@@ -38,5 +38,14 @@ namespace X12Scribe.Model.TransactionSets
             sb.Append(options.RecordDelimiter);
             return sb.ToString();
         }
+
+        override public void Validate(X12Options options)
+        {
+            this.ST.Validate(options);
+            if(this.Children != null)
+                foreach(Segment segment in Children)
+                    segment.Validate(options);
+            this.SE.Validate(options);
+        }
     }
 }

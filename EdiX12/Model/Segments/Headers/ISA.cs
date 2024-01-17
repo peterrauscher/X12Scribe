@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using X12Scribe.Attributes;
+using X12Scribe.Model.Elements;
 
 namespace X12Scribe.Model.Segments.Headers
 {
@@ -15,7 +16,7 @@ namespace X12Scribe.Model.Segments.Headers
             set
             {
                 ICN = value;
-                this[13] = value;
+                this[13] = new Element("ICN");
             }
         }
 

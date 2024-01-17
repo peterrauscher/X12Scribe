@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
+using X12Scribe.Errors;
+using X12Scribe.Model.DataType;
 
 namespace X12Scribe.Model.Elements
 {
@@ -11,8 +14,8 @@ namespace X12Scribe.Model.Elements
     {
         readonly string _value;
         public string ID { get; set; }
+        public IDataType DataType { get; set; }
         public string? Name { get; set; }
-        public string? DataType { get; set; }
         public int? MinLength { get; set; }
         public int? MaxLength { get; set; }
         public int? Position { get; set; }
@@ -49,6 +52,23 @@ namespace X12Scribe.Model.Elements
         override public string ToString()
         {
             return _value;
+        }
+
+        public override void Validate(X12Options options)
+        {
+            new List<string>() {
+                options.FieldDelimiter,
+                options.RecordDelimiter,
+                options.SubfieldDelimiter
+            }.ForEach(c =>
+            {
+                if (_value.Contains(c)) throw new InvalidCharacterException(String.Format("Element '{0}' with ID '{1}' contains special character {2}", this.Name, this.ID, c));
+            });
+
+            if (DataType is AlphaNumeric)
+            {
+
+            }
         }
     }
 }

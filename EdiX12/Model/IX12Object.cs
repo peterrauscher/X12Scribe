@@ -10,6 +10,7 @@ namespace X12Scribe.Model
     public abstract class IX12Object<TChild>
     {
         public virtual IList<TChild>? Children { get; set; }
+        public abstract void Validate(X12Options options);
     }
 
     public abstract class IX12Object : IX12Object<string> { }
